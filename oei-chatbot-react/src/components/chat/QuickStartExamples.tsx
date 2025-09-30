@@ -8,7 +8,7 @@ const QuickStartExamples: React.FC<QuickStartExamplesProps> = ({
   onExampleClick,
 }) => {
   // OEI course examples
-  const examples = ["Krakow - Online B1 Course","bruno - Offline A1 Course", "In which cities are you located?", "What is the best course for me?"];
+  const examples = ["Krakow - Online B1 Course","brno - Offline A1 Course", "In which cities are you located?", "What is the best course for me?"];
 
   const getStyle = (text: string) => {
     switch (text) {
