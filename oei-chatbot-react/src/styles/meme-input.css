@@ -1,0 +1,47 @@
+/* Meme-input styles adapted from meme-front */
+.meme-input__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  color: #f4f5f7;
+}
+
+.meme-input__wrapper > button {
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: var(--primary-color, #b91317);
+}
+
+.meme-input__recorder {
+  position: absolute;
+  left: 12px;
+  cursor: text;
+  z-index: 99;
+  cursor: pointer;
+}
+
+/* Arrow icon styling for links */
+.link-arrow {
+  color: #b91317 !important;
+  font-weight: bold;
+}
+
+/* Safari mobile viewport height fixes */
+@supports not (height: 100dvh) {
+  .cart {
+    height: 100vh; /* Fallback for browsers that don't support dvh */
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .cart {
+    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
+  }
+}
