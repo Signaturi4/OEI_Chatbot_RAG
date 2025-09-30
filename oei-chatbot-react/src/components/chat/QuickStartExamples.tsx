@@ -8,7 +8,28 @@ const QuickStartExamples: React.FC<QuickStartExamplesProps> = ({
   onExampleClick,
 }) => {
   // OEI course examples
-  const examples = ["Krakow - Online B1 Course","brno - Offline A1 Course", "In which cities are you located?", "What is the best course for me?"];
+  const allExamples = [
+    "Krakow - Online B1 Course",
+    "brno - Offline A1 Course",
+    "In which cities are you located?",
+    "What is the best course for me?",
+  ];
+
+  // Show only 2 examples on mobile, all on desktop
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const examples = isMobile ? allExamples.slice(0, 2) : allExamples;
 
   const getStyle = (text: string) => {
     switch (text) {

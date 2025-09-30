@@ -12,7 +12,7 @@ class ApiService {
 
   constructor(
     baseURL: string = process.env.REACT_APP_API_URL ||
-      "https://oeichatbotrag-production.up.railway.app"
+      "https://oei-chatbot-rag.onrender.com"
   ) {
     this.api = axios.create({
       baseURL,
