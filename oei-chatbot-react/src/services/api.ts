@@ -10,7 +10,10 @@ import {
 class ApiService {
   private api: AxiosInstance;
 
-  constructor(baseURL: string = "http://localhost:8001") {
+  constructor(
+    baseURL: string = process.env.REACT_APP_API_URL ||
+      "https://oeichatbotrag-production.up.railway.app"
+  ) {
     this.api = axios.create({
       baseURL,
       timeout: 60000, // OPTIMIZATION: Increased from 30s to 60s
